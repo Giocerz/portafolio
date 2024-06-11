@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1F1E1E;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#particles-js {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.container {
+    width: 90vw;
+    max-width: 1000px;
+    padding: 30px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    background-color: #1F1E1ECC;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 50%;
+    } to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+section {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 30%;
+    animation-fill-mode: both;
+}
+
+section {
+    width: 100%;
+}
+
+.home {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.info-container {
+    font-size: 1.5rem;
+}
+
+.role-title {
+    color: #fdc500;
+}
+.avatar {
+    aspect-ratio: 1 / 1;
+    height: 200px;
+    border-radius: 999px;
+    box-shadow: 2px 2px 20px #fdc500;
+}
+
+.about {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.education-items {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.education-image {
+    height: 100px;
+}
+
+.ed-item-content {
+    width: 70%;
+}
+
+.ed-item-line {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #BAB9B8;
+    bottom: 0;
+    transition: all 800ms ease;
+}
+
+.education-items:hover .ed-item-line {
+    width: 70%;
+    background-color: #fdc500;
+}
+
+/*Projects sction */
+.projects-list, .certificates-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.projects-items {
+    width: 300px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.project-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 300px;
+    height: 200px;
+}
+
+.projects-items-info {
+    width: 100%;
+    padding-left: 10px;
+}
+
+
+/* Certificates section */
+.certificates-items {
+    height: 200px;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.certificate-image {
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form > input, form > textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #adb5bd;
+    border-radius: 10px;
+    outline: none;
+    transition: all 150ms ease;
+}
+
+form > input {
+    height: 3em;
+}
+
+form > textarea {
+    height: 10rem
+}
+
+form > input:focus, form > textarea:focus {
+    outline: 3px solid #fdc500;
+    background-color: white;
+    opacity: 1;
+}
+
+textarea {
+    height: 20em;
+}
+
+.errorForm {
+    margin: 0;
+    height: 30px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+@media (max-width: 400px) {
+    .container {
+        width: 80vw;
+    }
+    section {
+        width: 100%;
+    }
+    .home-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .avatar {
+        order: 1;
+    }
+
+    .info-container {
+        order: 2;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1094px) {
+    .projects-list::after {
+        content: '';
+        width: 300px;
+        height: 200px;
+    }
+}   
